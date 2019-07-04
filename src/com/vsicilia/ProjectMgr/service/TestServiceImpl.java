@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 public class TestServiceImpl implements TestService {
 
-    TestDao testDao;
+    private TestDao testDao;
 
     @Inject
     public TestServiceImpl(TestDao testDao){
@@ -15,6 +15,6 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public String returnHello() {
-        return testDao.returnHello();
+        return null;
     }
 }

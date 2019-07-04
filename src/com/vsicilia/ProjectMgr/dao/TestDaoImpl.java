@@ -1,10 +1,14 @@
 package com.vsicilia.ProjectMgr.dao;
 
-public class TestDaoImpl implements TestDao{
 
+public class TestDaoImpl implements TestDao {
+
+    public TestDaoImpl(){
+
+    }
 
     @Override
     public String returnHello() {
-        return "hello there, my friend";
+        return null;
     }
 }
