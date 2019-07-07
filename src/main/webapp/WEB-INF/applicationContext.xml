@@ -16,6 +16,32 @@
         <constructor-arg index="0" ref="testService" />
     </bean>
 
-    <bean id="testDao" class="com.vsicilia.ProjectMgr.dao.TestDaoImpl"/>
+    <bean id="testDao" class="com.vsicilia.ProjectMgr.dao.TestDaoImpl"></bean>
+
+    <bean id="userService" class="com.vsicilia.ProjectMgr.service.UserServiceImpl">
+        <constructor-arg index="0" ref="userDao"/>
+    </bean>
+
+    <!--MySql Beans-->
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://yumojadata.cvrkfv9yl7bo.us-east-2.rds.amazonaws.com:3306/YumojaTest"/>
+        <property name="username" value="root"/>
+        <property name="password" value="2RLs$AmO$ephE#IcL_Ug"/>
+    </bean>
+
+    <!--    <bean id="transactionManager"-->
+    <!--          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+    <!--        <property name="dataSource" ref="dataSource"/>-->
+    <!--    </bean>-->
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg index="0" ref="dataSource"/>
+    </bean>
+
+    <bean id="userDao" class="com.vsicilia.ProjectMgr.dao.UserDaoImpl">
+        <constructor-arg index="0" ref="jdbcTemplate"/>
+    </bean>
 
 </beans>

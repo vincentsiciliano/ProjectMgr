@@ -1,0 +1,56 @@
+<!--<beans:beans xmlns:beans="http://www.springframework.org/schema/beans"-->
+<!--             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--             xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--             http://www.springframework.org/schema/beans/spring-beans-3.0.xsd-->
+<!--             http://www.springframework.org/schema/security-->
+<!--             http://www.springframework.org/schema/security/spring-security-4.2.13.xsd">-->
+
+<!--    <beans:bean id="webexpressionHandler"-->
+<!--                class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>-->
+
+<!--    <beans:bean id="encoder"-->
+<!--                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->
+
+<!--    <beans:bean id="ProjectMgrSimpleUrlAuthenticationSuccessHandler" class="com.vsicilia.ProjectMgr.security.ProjectMgrSimpleUrlAuthenticationSuccessHandler" />-->
+
+<!--    <authentication-manager>-->
+<!--        <authentication-provider>-->
+<!--            <password-encoder ref="encoder"/>-->
+<!--            <jdbc-user-service id="UserService"-->
+<!--                               data-source-ref="dataSource"-->
+<!--                               users-by-username-query=-->
+<!-- "select username, password, enabled from users where username = ?"-->
+<!--                               authorities-by-username-query=-->
+<!-- "select * from authorities where username = ?" />-->
+
+<!--        </authentication-provider>-->
+
+<!--        <authentication-provider>-->
+<!--            <user-service>-->
+<!--                <user name="user@projectmgr.com"-->
+<!--                      password="user"-->
+<!--                      authorities="ROLE_USER" />-->
+
+<!--            </user-service>-->
+<!--        </authentication-provider>-->
+<!--    </authentication-manager>-->
+
+<!--    <http pattern="/" security="none" />-->
+<!--    <http pattern="/css/**" security="none" />-->
+<!--    <http pattern="/js/**" security="none" />-->
+<!--    <http pattern="/fonts/**" security="none" />-->
+<!--    <http pattern="/images/**" security="none" />-->
+
+<!--    <http auto-config="true">-->
+<!--        <form-login login-processing-url="/j_spring_security_check"-->
+<!--                    login-page="/home" always-use-default-target="false"-->
+<!--                    authentication-failure-url="/home?login_error=1"-->
+<!--                    authentication-success-handler-ref="ProjectMgrSimpleUrlAuthenticationSuccessHandler" />-->
+
+
+<!--        <intercept-url pattern="/error/**" access="IS_AUTHENTICATED_ANONYMOUSLY, ROLE_USER" />-->
+
+<!--    </http>-->
+
+
+<!--</beans:beans>-->
